@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Details</title>
+</head>
+<body style="text-align:center">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<form action="finance" method="post">
+	<br>
+	<br>
+	Card Type:
+	<select name="card" required>
+	<option value="" selected disabled>--select--</option>
+	<option value="Credit">Credit</option>
+	<option value="Debit">Debit</option>
+	</select>
+	<br>
+	<br>
+	Card Number:
+	<input type="text" id="cardNumber" name="cardNumber" value="" required pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}" placeholder="xxxx xxxx xxxx xxxx">
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span style="color:Red;">Enter 16-digit Number</span><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span style="color:Red;">Format: "xxxx xxxx xxxx xxxx"</span>
+	<br>
+	<br>
+	<!--  <script>
+	$('#cardNumber').on('keypress change blur', function () {
+	    $(this).val(function (index, value) {
+	        return value.replace(/[^0-9]+/gi, '').replace(/(.{4})/g, '$1 ');
+	    });
+	});
+
+	$('#cardNumber').on('copy cut paste', function () {
+	    setTimeout(function () {
+	        $('#cardNumber').trigger("change");
+	    });
+	});
+	</script>-->
+	CVV:
+	<input type="password" name="cvv" value="" required pattern="[0-9]{3}">
+	<br>
+	<br>
+	<input type="submit" name="submit" value="Pay">
+	</form>
+</body>
+</html>

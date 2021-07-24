@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Change Password</title>
+</head>
+<body style="text-align: center">
+	<script>
+		function passwordCheck(SignUpForm) {
+
+			if (document.getElementById('password').value == document
+					.getElementById('confirmPassword').value) {
+				document.getElementById('message').style.color = 'green';
+				document.getElementById('message').innerHTML = 'Matched';
+			} else {
+				document.getElementById('message').style.color = 'red';
+				document.getElementById('message').innerHTML = 'Not Matched';
+			}
+		}
+	</script>
+	<p style="color:orange">PASSWORD CHANGE</p>
+	<form action="changePassword" method="post">
+		<br>  
+		<div class="form-group">
+		 New Password:
+		<input type="password" id="password" name="pass" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+								onkeyup="passwordCheck();" required> <br> 
+		</div>
+		<span id="strength" style="color:Red;">Must contain at least one number, one UpperCase letter, one LowerCase letter, and at least 6 or more characters</span>
+		<br>
+		<br>
+		<div class="form-group">
+		Confirm New Password: 
+		<input	type="password" id="confirmPassword" onkeyup="passwordCheck();" name="cpass" value="" required> <br>
+		</div>
+		<span id='message' style="color: Red;"></span>	<br><br>
+	 	<input	type="submit" name="submit" value="Change Password">
+	</form>
+</body>
+</html>
